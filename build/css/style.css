@@ -111,7 +111,7 @@ table {
   font-family: 'open_sans';
   src: url("../../fonts/opensans-light-webfont.eot");
   src: url("../../fonts/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/opensans-light-webfont.woff2") format("woff2"), url("../../fonts/opensans-light-webfont.ttf") format("truetype"), url("../../fonts/opensans-light-webfont.svg#open_sanslight") format("svg");
-  font-weight: lighter;
+  font-weight: normal;
   font-style: normal; }
 
 @font-face {
@@ -124,28 +124,68 @@ table {
 body {
   background-color: black;
   color: #ffffff;
-  font-size: 16px; }
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 50px; }
 
 h1 {
   display: none; }
 
-.container1 {
+.container {
   width: 100%;
+  height: 90vh;
   display: -ms-flexbox;
   display: flex;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-align: center;
       align-items: center; }
-
-.image {
-  width: 220px;
-  margin: 200px 0;
-  padding: 0 20px; }
-
-h2 {
-  font-size: 1rem; }
+  @media all and (min-width: 600px) {
+    .container {
+      width: 100%;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      padding-left: 17%; } }
+  @media all and (min-width: 1000px) {
+    .container {
+      padding-left: 32px; } }
+  .container img {
+    max-width: 220px;
+    width: 100%; }
+    @media all and (min-width: 600px) {
+      .container img {
+        width: 22%; } }
+    @media all and (min-width: 1000px) {
+      .container img {
+        position: aboslute;
+        margin-right: 5%; } }
 
 .selectcontain {
-  margin: auto 50px; }
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  @media all and (min-width: 600px) {
+    .selectcontain {
+      margin-left: 12px; } }
+  .selectcontain h2 {
+    font-family: 'open_sans';
+    font-size: 0.8rem;
+    margin: 18px; }
+    @media all and (min-width: 600px) {
+      .selectcontain h2 {
+        font-size: 0.9rem;
+        text-align: left;
+        margin: 0 0 15px 0; } }
 
 #selector {
   width: 120px;
@@ -153,7 +193,23 @@ h2 {
   font-size: 1rem;
   text-transform: capitalize; }
 
-p {
-  margin: 0 25px;
-  font-family: 'open_sans';
-  color: #c2c2c2; }
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  width: 100%;
+  text-align: center; }
+  .footer p {
+    color: #c2c2c2;
+    font-family: 'open_sans';
+    font-size: 0.9rem;
+    text-align: center; }
+    @media all and (min-width: 600px) {
+      .footer p {
+        margin: 5px; } }
+    @media all and (min-width: 1000px) {
+      .footer p {
+        text-align: left;
+        padding-left: 27px; } }

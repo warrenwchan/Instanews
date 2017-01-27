@@ -1,5 +1,24 @@
-p{
-    margin: 0 25px;
-    font-family: 'open_sans';
-    color: #c2c2c2;
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    width: 100%;
+    text-align: center;
+
+
+    p{
+        color: #c2c2c2;
+        font-family:'open_sans';
+        font-size: 0.9rem;
+        text-align: center;
+        @include tablet{
+            margin: 5px;
+        }
+        @include desktop{
+            text-align: left;
+            padding-left: 27px;
+        }
+    }
 }

@@ -1,9 +1,23 @@
-@mixin media($width){
-    @media all and (min-width: $desktop-width){
-        
-    }
+@mixin desktop {
+  @media all and (min-width: $desktop-width) {
+    @content;
+  }
 }
 
-@mixin primfont{
-    font-family: 'open-sans';
+@mixin tablet {
+  @media all and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin primefont{
+    font-family: $basefont;
+    font-weight: normal;
+}
+
+@mixin center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
