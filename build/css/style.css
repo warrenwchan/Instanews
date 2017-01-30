@@ -122,8 +122,6 @@ table {
   font-style: italic; }
 
 body {
-  height: 100%;
-  width: 100%;
   background-color: black;
   color: #ffffff;
   font-size: 16px;
@@ -154,10 +152,26 @@ h1 {
           justify-content: flex-start; } }
   .container img {
     max-width: 220px;
-    width: 100%; }
+    animation-name: reposition1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out; }
+
+@keyframes reposition1 {
+  0% {
+    transform: translate(-10px, 10px); }
+  100% {
+    transform: translate(0px, 0px); } }
     @media all and (min-width: 600px) {
       .container img {
-        width: 22%; } }
+        width: 22%; }
+      @keyframes reposition1 {
+        0% {
+          transform: translate(10px, 10px); }
+        100% {
+          transform: translate(0px, 0px); } } }
 
 .compactHeader {
   display: -ms-flexbox;
@@ -191,6 +205,54 @@ h1 {
       .compactHeader img {
         padding: 0 75px 0 0; } }
 
+.selectcontain {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  animation-name: reposition;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out; }
+
+@keyframes reposition {
+  0% {
+    transform: translate(10px, -10px); }
+  100% {
+    transform: translate(0px, 0px); } }
+  @media all and (min-width: 600px) {
+    .selectcontain {
+      margin-left: 12px;
+      width: 250px;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+    @keyframes reposition {
+      0% {
+        transform: translate(-10px, 0px); }
+      100% {
+        transform: translate(0px, 0px); } } }
+  @media all and (min-width: 1000px) {
+    @keyframes reposition {
+      0% {
+        transform: translate(0px, 0px); }
+      100% {
+        transform: translate(100px, 0px); } } }
+  .selectcontain h2 {
+    font-family: "open_sans", "sans-serif";
+    font-size: 0.8rem;
+    margin: 18px; }
+    @media all and (min-width: 600px) {
+      .selectcontain h2 {
+        font-size: 0.9rem;
+        text-align: left;
+        margin: 0 0 15px 0; } }
+
 .loading {
   width: 100%;
   padding: 10px;
@@ -213,31 +275,6 @@ h1 {
     font-family: "open_sans", "sans-serif";
     padding: 10px; }
 
-.selectcontain {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center; }
-  @media all and (min-width: 600px) {
-    .selectcontain {
-      margin-left: 12px;
-      width: 250px;
-      -ms-flex-align: start;
-          align-items: flex-start; } }
-  .selectcontain h2 {
-    font-family: "open_sans", "sans-serif";
-    font-size: 0.8rem;
-    margin: 18px; }
-    @media all and (min-width: 600px) {
-      .selectcontain h2 {
-        font-size: 0.9rem;
-        text-align: left;
-        margin: 0 0 15px 0; } }
-
 #selector {
   width: 120px;
   height: 25px;
@@ -246,10 +283,10 @@ h1 {
   outline: none; }
 
 .err {
-  position: relative;
-  top: 20px;
+  width: 100%;
   font-family: "open_sans", "sans-serif";
-  text-transform: capitalize; }
+  text-transform: capitalize;
+  text-align: center; }
 
 .newsContainer .news {
   width: 100%;
@@ -294,10 +331,10 @@ h1 {
   height: 75px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
   @media all and (min-width: 1000px) {
     .footer {
       -ms-flex-pack: start;

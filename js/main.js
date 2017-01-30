@@ -63,7 +63,10 @@ $(document).ready(function () {
 			})
 
 			.fail(function () {
-				$('#news').append("<p class='err'>Got nothing for you</p>")
+
+				loadingMessage.hide();
+
+				$('#news').append('<div class="err">' + '<p>Got nothing for you...</p>' + '</div>')
 			});
 	});
 });

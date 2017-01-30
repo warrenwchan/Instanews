@@ -1,6 +1,4 @@
 body{
-    height: 100%;
-    width: 100%;
     background-color: black;
     color: #ffffff;
     font-size: 16px;
@@ -26,9 +24,19 @@ h1{
     }
     img{
         max-width:220px;
-        width: 100%;
+        // width: 100%;
+        @include animate;
+        @keyframes reposition1 {
+            0% {transform: translate(-10px, 10px);}
+            100% {transform: translate(0px, 0px);}
+        }
         @include tablet{
+          
             width: 22%;
+            @keyframes reposition1 {
+              0% {transform: translate(10px, 10px);}
+              100% {transform: translate(0px, 0px);}
+            }
         }
     }
 }
@@ -61,29 +69,48 @@ h1{
     }
 }
 
-.loading{
-        width: 100%;
-        padding: 10px;
-        flex-wrap: wrap;
-        @include center;
-        
-        img{
-            width: 40px;
-            align-self: center;
-        }
-        p{
-            font-family: $basefont;
-            padding: 10px;
-        }
+.selectcontain{
+    @include center;;
+    animation-name: reposition;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+    @keyframes reposition {
+      0%{
+        transform: translate(10px, -10px);
+      }
+      100%{
+        transform: translate(0px, 0px);
+      }
     }
 
-.selectcontain{
-    @include center;
-
     @include tablet{
-        margin-left: 12px;
-        width: 250px;
-        align-items: flex-start;
+      margin-left: 12px;
+      width: 250px;
+      align-items: flex-start;
+
+      @keyframes reposition {
+        0%{
+          transform: translate(-10px, 0px);
+        }
+        100%{
+          transform: translate(0px, 0px);
+        }
+      }
+    }
+
+    @include desktop{
+      @keyframes reposition {
+        0%{
+          transform: translate(0px, 0px);
+        }
+        100%{
+          transform: translate(100px, 0px);
+        }
+      }
     }
     
     h2{
@@ -100,6 +127,22 @@ h1{
 }
 
 
+.loading{
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        @include center;
+        
+        img{
+            width: 40px;
+            align-self: center;
+        }
+        p{
+            font-family: $basefont;
+            padding: 10px;
+        }
+    }
+
 #selector{
     width: 120px;
     height: 25px;
@@ -110,11 +153,11 @@ h1{
 
 
 .err{
-        position: relative;
-        top: 20px;
-        font-family: $basefont;
-        text-transform: capitalize;
-    }
+    width: 100%;
+    font-family: $basefont;
+    text-transform: capitalize;
+    text-align: center;
+}
     
 
 .newsContainer{
