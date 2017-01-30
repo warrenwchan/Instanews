@@ -1,21 +1,21 @@
 .footer{
     height: 75px;
-    width: 100%;
-    text-align: center;
-    @include center;
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include desktop{
+        justify-content: flex-start;
+    }
 
     p{
         color: #c2c2c2;
         font-family:'open_sans';
         font-size: 0.9rem;
-        text-align: center;
         @include tablet{
             margin: 5px;
         }
         @include desktop{
-            text-align: left;
-            padding-left: 27px;
+            padding-left: 30px;
         }
     }
 }

@@ -9,6 +9,8 @@ $(document).ready(function () {
 		$('.container').addClass('compactHeader');
 		$('#news').empty();
 
+		loadingMessage.show();
+
 		userSelect = this.value;
 
 		// Built by LucyBot. www.lucybot.com
@@ -24,6 +26,7 @@ $(document).ready(function () {
 
 			.done(function (result) {
 				console.log(result);
+
 
 				function checkPictures(artical) {
 					console.log(artical.multimedia.length)
@@ -52,6 +55,8 @@ $(document).ready(function () {
 					console.log(newsString);
 
 				});
+
+				loadingMessage.hide();
 
 				$('#news').append(newsString);
 

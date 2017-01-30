@@ -1,7 +1,6 @@
 body{
     height: 100%;
     width: 100%;
-    margin-bottom: 75px;
     background-color: black;
     color: #ffffff;
     font-size: 16px;
@@ -16,32 +15,20 @@ h1{
 
 .container{
     height: 90vh;
-    display: flex;
     @include center;
     @include tablet {
-        width: 100%;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding-left: 17%;   
+        flex-direction: row; 
     }
     @include desktop {
-        padding-left: 32px;
+        height: 80vh;
+        padding: 32px;
+        justify-content: flex-start;
     }
-
     img{
         max-width:220px;
         width: 100%;
         @include tablet{
             width: 22%;
-        }
-        @include desktop{
-            position: aboslute;
-            margin-right: 5%;
-        }
-    }
-    .loading{
-        img{
-            width: 40px;
         }
     }
 }
@@ -74,12 +61,29 @@ h1{
     }
 }
 
+.loading{
+        width: 100%;
+        padding: 10px;
+        flex-wrap: wrap;
+        @include center;
+        
+        img{
+            width: 40px;
+            align-self: center;
+        }
+        p{
+            font-family: $basefont;
+            padding: 10px;
+        }
+    }
 
 .selectcontain{
     @include center;
 
     @include tablet{
-         margin-left: 12px;
+        margin-left: 12px;
+        width: 250px;
+        align-items: flex-start;
     }
     
     h2{
@@ -101,6 +105,7 @@ h1{
     height: 25px;
     font-size: 1rem;
     text-transform: capitalize;
+    outline: none;
 }
 
 
@@ -123,12 +128,15 @@ h1{
         display: flex;
         flex-wrap: wrap;
         }
-    }
 
     li{
         width: 100%;
-        @include mobile{
+        @include tablet{
             width: 50%;
+        }
+        @include desktop{
+            width: 25%;
+        }
     }
 
     a{
