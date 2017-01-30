@@ -1,18 +1,64 @@
-$(function(){
-    var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
+$(document).ready(function () {
 
-    url += '?' + $.param({
-    'api-key': "0da64a8f458b49629ffa223d7ac34353"
-    });
+	var userSelect = '';
+	var loadingMessage = $('.loading');
+	loadingMessage.hide();
 
-    $.ajax({
-    url: url,
-    method: 'GET',
+	$('#selector').on('change', function () {
 
-    }).done(function(result) {
-    console.log(result);
+		$('.container').addClass('compactHeader');
+		$('#news').empty();
 
-    }).fail(function(result) {
-    .append ("sorry cannot find any news")
-    });
-})
+		userSelect = this.value;
+
+		// Built by LucyBot. www.lucybot.com
+		var url = 'https://api.nytimes.com/svc/topstories/v2/' + userSelect + '.json';
+		url += '?' + $.param({
+			'api-key': "049673d3a2eb4eda9c6bb4ec46c49cf5",
+			'callback': "12"
+		});
+		$.ajax({
+			url: url,
+			method: 'GET',
+		})
+
+			.done(function (result) {
+				console.log(result);
+
+				function checkPictures(artical) {
+					console.log(artical.multimedia.length)
+					return artical.multimedia.length;
+				}
+
+				var filtered = result.results.filter(checkPictures)
+				filtered.splice(12);
+				console.log(filtered)
+
+
+				var newsString = '';
+
+				$.each(filtered, function (item, value) {
+
+					//variances & markups
+
+					var link = value.url;
+					var abstract = value.abstract;
+					var image = value.multimedia[4].url;
+
+					newsString += '<li><a href=' + link + ' target="_blank">';
+					newsString += '<div class="storyImage" style="background-image: url(' + image + ')">';
+					newsString += '<p>' + abstract + '</p>';
+					newsString += '</></a></li>';
+					console.log(newsString);
+
+				});
+
+				$('#news').append(newsString);
+
+			})
+
+			.fail(function () {
+				$('#news').append("<p class='err'>Got nothing for you</p>")
+			});
+	});
+});
