@@ -1,11 +1,17 @@
 @mixin desktop {
-  @media all and (min-width: $desktop-width) {
+  @media all and (min-width: $desktop-vh) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media all and (min-width: $tablet-width) {
+  @media all and (min-width: $tablet-vh) {
+    @content;
+  }
+}
+
+@mixin mobile{
+  @media all and (min-width: $mobile-vh) {
     @content;
   }
 }

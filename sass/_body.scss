@@ -1,17 +1,20 @@
 body{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 75px;
     background-color: black;
     color: #ffffff;
     font-size: 16px;
-    width: 100%;
-    margin-bottom: 50px;
+    position: relative
 }
+
 
 h1{
     display: none
 }
 
+
 .container{
-    width: 100%;
     height: 90vh;
     display: flex;
     @include center;
@@ -43,9 +46,10 @@ h1{
     }
 }
 
+
 .compactHeader{
     @include center;
-    padding-top: 30px;
+    padding: 30px 0;
     height: auto;
 
     @include tablet{
@@ -70,6 +74,7 @@ h1{
     }
 }
 
+
 .selectcontain{
     @include center;
 
@@ -89,12 +94,15 @@ h1{
         }
     }
 }
+
+
 #selector{
     width: 120px;
     height: 25px;
     font-size: 1rem;
     text-transform: capitalize;
 }
+
 
 .err{
         position: relative;
@@ -103,22 +111,46 @@ h1{
         text-transform: capitalize;
     }
     
-.newsContainer{
-    .newgrid{
-    
-    }
-    ul{
 
-    }
-    li{
+.newsContainer{
+    
+
+    .news{
         width: 100%;
+        @include mobile{
+            width: 50%;
+        }
+    }
+
+    // li{
+    //     width: 100%;
+    // }
+
+    a{
+        text-decoration: none;
+    }
+
+    p{
+        font-family: $basefont;
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
     }
 
     .storyImage{
         width: 100%;
         height: 420px;
+        background-position: center;
         background-size: cover;
-    }
-    }
+        position: relative;
 
+         .abstractText{
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 12px;
+            position: absolute;
+            bottom: 0;
+            line-height: 1.5rem;
+            width: 95%;
+        }
+    }
 }

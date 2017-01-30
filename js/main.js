@@ -47,8 +47,8 @@ $(document).ready(function () {
 
 					newsString += '<li><a href=' + link + ' target="_blank">';
 					newsString += '<div class="storyImage" style="background-image: url(' + image + ')">';
-					newsString += '<p>' + abstract + '</p>';
-					newsString += '</></a></li>';
+					newsString += '<div class="abstractText">' + '<p>' + abstract + '</p>' + '</div>';
+					newsString += '</div></a></li>';
 					console.log(newsString);
 
 				});
