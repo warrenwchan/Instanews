@@ -1,212 +1,70 @@
 body{
-    background-color: black;
-    color: #ffffff;
-    font-size: 16px;
-    position: relative
+	background-color: black;
+	color: #ffffff;
+	font-size: 16px;
+	position: relative;
+	font-family: $basefont;
 }
-
 
 h1{
-    display: none
+	display: none
 }
-
-
-.container{
-    height: 90vh;
-    @include center;
-    @include tablet {
-        flex-direction: row; 
-    }
-    @include desktop {
-        height: 80vh;
-        padding: 32px;
-        justify-content: flex-start;
-    }
-    img{
-        max-width:220px;
-        // width: 100%;
-        @include animate;
-        @keyframes reposition1 {
-            0% {transform: translate(-10px, 10px);}
-            100% {transform: translate(0px, 0px);}
-        }
-        @include tablet{
-          
-            width: 22%;
-            @keyframes reposition1 {
-              0% {transform: translate(10px, 10px);}
-              100% {transform: translate(0px, 0px);}
-            }
-        }
-    }
-}
-
-
-.compactHeader{
-    @include center;
-    padding: 30px 0;
-    height: auto;
-
-    @include tablet{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding-left: 20px;
-    }
-
-    img{
-        width: 150px;
-
-        @include tablet{
-            width: 70px;
-            padding: 0 75px;
-
-        }
-        @include desktop{
-            padding: 0 75px 0 0;
-        }
-    }
-}
-
-.selectcontain{
-    @include center;;
-    animation-name: reposition;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-
-    @keyframes reposition {
-      0%{
-        transform: translate(10px, -10px);
-      }
-      100%{
-        transform: translate(0px, 0px);
-      }
-    }
-
-    @include tablet{
-      margin-left: 12px;
-      width: 250px;
-      align-items: flex-start;
-
-      @keyframes reposition {
-        0%{
-          transform: translate(-10px, 0px);
-        }
-        100%{
-          transform: translate(0px, 0px);
-        }
-      }
-    }
-
-    @include desktop{
-      @keyframes reposition {
-        0%{
-          transform: translate(0px, 0px);
-        }
-        100%{
-          transform: translate(100px, 0px);
-        }
-      }
-    }
-    
-    h2{
-        font-family: $basefont;
-        font-size: 0.8rem;
-        margin: 18px;
-        
-        @include tablet{
-                font-size: 0.9rem;
-                text-align: left;
-                margin: 0 0 15px 0;
-        }
-    }
-}
-
 
 .loading{
-        width: 100%;
-        padding: 10px;
-        flex-wrap: wrap;
-        @include center;
-        
-        img{
-            width: 40px;
-            align-self: center;
-        }
-        p{
-            font-family: $basefont;
-            padding: 10px;
-        }
-    }
-
-#selector{
-    width: 120px;
-    height: 25px;
-    font-size: 1rem;
-    text-transform: capitalize;
-    outline: none;
+	width: 100%;
+	padding: 10px;
+	flex-wrap: wrap;
+	@include center;
+	img{
+		width: 40px;
+		align-self: center;
+	}
+	p{
+		padding: 10px;
+	}
 }
-
 
 .err{
-    width: 100%;
-    font-family: $basefont;
-    text-transform: capitalize;
-    text-align: center;
+	width: 100%;
+	text-transform: capitalize;
+	text-align: center;
 }
-    
+	
 
 .newsContainer{
-    .newsgrid{
-        // display: flex;
-        // flex-wrap: wrap;
-    }
+	.news{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-    .news{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        }
+	li{
+		width: 100%;
+		@include tablet{
+			width: 50%;
+		}
+		@include desktop{
+			width: 25%;
+		}
+	}
+	p{
+		color: white;
+		text-decoration: none;
+	}
+	.storyImage{
+		width: 100%;
+		height: 420px;
+		position: relative;
+		background-size: cover;
+		background-position: center;
 
-    li{
-        width: 100%;
-        @include tablet{
-            width: 50%;
-        }
-        @include desktop{
-            width: 25%;
-        }
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    p{
-        font-family: $basefont;
-        font-size: 1rem;
-        color: white;
-        text-decoration: none;
-    }
-
-    .storyImage{
-        width: 100%;
-        height: 420px;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-
-         .abstractText{
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 12px;
-            position: absolute;
-            bottom: 0;
-            line-height: 1.5rem;
-            width: 95%;
-        }
-    }
+		.abstractText{
+			width: 95%;
+			padding: 12px;
+			bottom: 0;
+			position: absolute;
+			line-height: 1.5rem;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+	}
 }
