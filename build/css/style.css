@@ -235,33 +235,37 @@ h1 {
   text-transform: capitalize; }
 
 .newsContainer .news {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+li {
   width: 100%; }
   @media all and (min-width: 480px) {
-    .newsContainer .news {
+    li {
       width: 50%; } }
-
-.newsContainer a {
-  text-decoration: none; }
-
-.newsContainer p {
-  font-family: "open_sans", "sans-serif";
-  font-size: 1rem;
-  color: white;
-  text-decoration: none; }
-
-.newsContainer .storyImage {
-  width: 100%;
-  height: 420px;
-  background-position: center;
-  background-size: cover;
-  position: relative; }
-  .newsContainer .storyImage .abstractText {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 12px;
-    position: absolute;
-    bottom: 0;
-    line-height: 1.5rem;
-    width: 95%; }
+  li a {
+    text-decoration: none; }
+  li p {
+    font-family: "open_sans", "sans-serif";
+    font-size: 1rem;
+    color: white;
+    text-decoration: none; }
+  li .storyImage {
+    width: 100%;
+    height: 420px;
+    background-position: center;
+    background-size: cover;
+    position: relative; }
+    li .storyImage .abstractText {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 12px;
+      position: absolute;
+      bottom: 0;
+      line-height: 1.5rem;
+      width: 95%; }
 
 .footer {
   height: 75px;

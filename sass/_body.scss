@@ -113,18 +113,23 @@ h1{
     
 
 .newsContainer{
-    
+    .newsgrid{
+        // display: flex;
+        // flex-wrap: wrap;
+    }
 
     .news{
         width: 100%;
-        @include mobile{
-            width: 50%;
+        display: flex;
+        flex-wrap: wrap;
         }
     }
 
-    // li{
-    //     width: 100%;
-    // }
+    li{
+        width: 100%;
+        @include mobile{
+            width: 50%;
+    }
 
     a{
         text-decoration: none;
