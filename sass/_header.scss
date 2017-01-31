@@ -69,6 +69,7 @@
 	@include center;
 	padding: 30px 0;
 	height: auto;
+	z-index: 999;
 	@include tablet{
 		display: flex;
 		flex-direction: row;

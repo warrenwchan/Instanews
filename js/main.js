@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	$('#selector').selectric();
+	// $('#selector').selectric();
 
 	var userSelect = '';
 	var loadingMessage = $('.loading');
