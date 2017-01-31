@@ -3,6 +3,7 @@ $(document).ready(function () {
 	var userSelect = '';
 	var loadingMessage = $('.loading');
 	loadingMessage.hide();
+	
 
 	$('#selector').on('change', function () {
 
