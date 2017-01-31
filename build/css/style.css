@@ -124,7 +124,7 @@ table {
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
-  width: 150px;
+  width: 100px;
   text-transform: capitalize; }
 
 .selectric-responsive {
