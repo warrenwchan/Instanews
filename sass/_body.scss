@@ -33,9 +33,9 @@ h1{
 
 .newsContainer{
 	.news{
-		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
+
 	}
 
 	li{
@@ -58,14 +58,11 @@ h1{
 		background-size: cover;
 		background-position: center;
 
-	.storyImage:hover{
-		
-	}
-
 		.abstractText{
 			width: 95%;
 			padding: 12px;
 			bottom: 0;
+			// top: 420px;
 			position: absolute;
 			line-height: 1.5rem;
 			background-color: rgba(0, 0, 0, 0.5);

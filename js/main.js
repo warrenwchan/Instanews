@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+	$('#selector').selectric();
+
 	var userSelect = '';
 	var loadingMessage = $('.loading');
 	loadingMessage.hide();
