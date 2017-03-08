@@ -12,46 +12,26 @@
 	img{
 		max-width:220px;
 		@include animate1;
-		@keyframes reposition1 {
-			0% {transform: translate(-10px, 10px);}
-			100% {transform: translate(0px, 0px);}
-		}
+
 		@include tablet{
 			width: 22%;
 			@include animate1;
-			@keyframes reposition1 {
-			0% {transform: translate(10px, 10px);}
-			100% {transform: translate(0px, 0px);}
-			}
 		}
 	}
 }
 
 .selectcontain{
 	@include center;
-	@include animate;
-	@keyframes reposition {
-		0% {transform: translate(10px, -10px);}
-		100% {transform: translate(0px, 0px);}
-	}
-
+	@include animate2;
 	@include tablet{
 		margin-left: 12px;
 		width: 250px;
 		align-items: flex-start;
-		@include animate;
-		@keyframes reposition {
-			0% {transform: translate(-10px, 0px);}
-			100% {transform: translate(0px, 0px);}
-		}
+		@include animate2;
 	}
 
 	@include desktop{
-		@include animate;
-		@keyframes reposition {
-			0% {transform: translate(0px, 0px);}
-			100% {transform: translate(100px, 0px);}
-		}
+		@include animate2;
 	}
 	
 	h2{
@@ -79,6 +59,7 @@
 	}
 	img{
 		width: 150px;
+		@include fadein;
 		@include tablet{
 			width: 70px;
 			padding: 0 75px;
@@ -90,7 +71,7 @@
 	.selectcontain{
 		@include desktop{
 			position: relative;
-			right: 100px;
+			@include animate1;
 		}
 	}
 }
