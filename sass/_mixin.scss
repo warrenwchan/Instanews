@@ -1,17 +1,17 @@
 @mixin desktop {
-  @media all and (min-width: $desktop-vh) {
+  @media all and (min-width: 1000px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media all and (min-width: $tablet-vh) {
+  @media all and (min-width: 600px) {
     @content;
   }
 }
 
 @mixin mobile{
-  @media all and (min-width: $mobile-vh) {
+  @media all and (max-width: 600px) {
     @content;
   }
 }
@@ -44,10 +44,27 @@
 	}
 }
 
+@mixin glideright {
+  animation: glide 1s 1 ease-in-out;
+  @keyframes glide {
+		0% {transform: translate(200px, 0); opacity: 0}
+		100% {transform: translate(0px, 0px); opacity: 0.9}
+	}
+}
+
 @mixin fadein {
   animation: fadein 1s 1 ease-in-out;
   @keyframes fadein {
     0% {opacity: 0}
     100% {opacity: 1}
+  }
+}
+
+@mixin popup {
+  display: contents;
+  animation: popup 1s 1;
+  @keyframes popup {
+    0% { bottom: -100px }
+    100% { bottom: 0 }
   }
 }

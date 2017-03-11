@@ -1,17 +1,21 @@
+// Main content
 .container{
-	height: 90vh;
+	height: 93vh;
 	@include center;
+
 	@include tablet {
 		flex-direction: row; 
 	}
+
 	@include desktop {
-		height: 80vh;
-		padding: 32px;
+		padding-left: 30px;
 		justify-content: flex-start;
 	}
+
 	img{
 		max-width:220px;
 		@include animate1;
+
 
 		@include tablet{
 			width: 22%;
@@ -20,6 +24,7 @@
 	}
 }
 
+// Select box container
 .selectcontain{
 	@include center;
 	@include animate2;
@@ -45,6 +50,7 @@
 	}
 }
 
+// minified header
 .compactHeader{
 	@include center;
 	padding: 30px 0;
@@ -64,14 +70,12 @@
 			width: 70px;
 			padding: 0 75px;
 		}
-		@include desktop{
-			padding: 0 75px 0 0;
-		}
 	}
 	.selectcontain{
-		@include desktop{
-			position: relative;
-			@include animate1;
+		@include fadein;
+		
+		@include tablet {
+			@include glideright;
 		}
 	}
 }
