@@ -16,8 +16,8 @@ $(document).ready(function () {
 		// Built by LucyBot. www.lucybot.com
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + userSelect + '.json';
 		url += '?' + $.param({
-			'api-key': "049673d3a2eb4eda9c6bb4ec46c49cf5",
-			'callback': "12"
+			'api-key': '049673d3a2eb4eda9c6bb4ec46c49cf5',
+			'callback': '12'
 		});
 
 		$.ajax({
