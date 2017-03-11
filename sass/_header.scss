@@ -24,7 +24,7 @@
 	}
 }
 
-// Select box container
+// Nav bar container
 .selectcontain{
 	@include center;
 	@include animate2;
@@ -50,7 +50,7 @@
 	}
 }
 
-// minified header
+// Minified header
 .compactHeader{
 	@include center;
 	padding: 30px 0;
