@@ -62,9 +62,23 @@
 
 @mixin popup {
   display: contents;
-  animation: popup 1s 1;
+  animation: popup .5s 1 ease-in-out;
   @keyframes popup {
     0% { bottom: -100px }
     100% { bottom: 0 }
   }
+}
+
+@mixin popdown {
+  display: contents;
+  animation: popdown .5s 1 ease-in;
+  @keyframes popdown {
+    0% { bottom: 0px }
+    100% { bottom: -100px }
+  }
+}
+
+@mixin grow {
+  transition: all .5s ease-in-out;
+    transform: scale(1.05);
 }

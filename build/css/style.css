@@ -476,6 +476,9 @@ body {
 h1 {
   display: none; }
 
+.selectcontain:hover {
+  color: #67D5B5; }
+
 .loading {
   width: 100%;
   padding: 10px;
@@ -513,6 +516,9 @@ h1 {
           flex-direction: column; } }
 
 .newsContainer li {
+  z-index: 1;
+  transition: all .2s ease-in;
+  transform: scale(1);
   animation: fadein 1s 1 ease-in-out; }
 
 @keyframes fadein {
@@ -527,9 +533,18 @@ h1 {
     .newsContainer li {
       width: 25%; } }
 
+.newsContainer li:hover {
+  z-index: 2;
+  transition: all .5s ease-in-out;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 50px #000000; }
+
 .newsContainer p {
   color: white;
   text-decoration: none; }
+
+.newsContainer p:hover {
+  color: #F68657; }
 
 .newsContainer .storyImage {
   height: 420px;
@@ -538,25 +553,30 @@ h1 {
   background-size: cover;
   background-position: center; }
   .newsContainer .storyImage .abstractText {
-    padding: 12px;
+    padding: 24px;
     position: absolute;
     bottom: -200px;
     line-height: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    display: contents;
+    animation: popdown .5s 1 ease-in; }
+
+@keyframes popdown {
+  0% {
+    bottom: 0px; }
+  100% {
+    bottom: -100px; } }
 
 .newsContainer .storyImage:hover .abstractText {
   bottom: 0;
   display: contents;
-  animation: popup 1s 1; }
+  animation: popup .5s 1 ease-in-out; }
 
 @keyframes popup {
   0% {
     bottom: -100px; }
   100% {
     bottom: 0; } }
-
-.newsContainer p:hover {
-  color: cadetblue; }
 
 .footer {
   position: absolute;

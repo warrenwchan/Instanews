@@ -11,6 +11,10 @@ h1{
 	display: none
 }
 
+.selectcontain:hover{
+	color:#67D5B5;
+}
+
 .loading{
 	width: 100%;
 	padding: 10px;
@@ -30,7 +34,7 @@ h1{
 	text-transform: capitalize;
 	text-align: center;
 }
-	
+
 
 .newsContainer{
 	.news{
@@ -43,6 +47,9 @@ h1{
 	}
 
 	li{
+		z-index: 1;
+		transition: all .2s ease-in;
+    	transform: scale(1.0);
 		@include fadein;
 		@include tablet{
 			width: 50%;
@@ -52,9 +59,19 @@ h1{
 		}
 	}
 
+	li:hover {
+		z-index: 2;
+		@include grow;
+		box-shadow: 0px 0px 50px #000000;
+	}
+
 	p{
 		color: white;
 		text-decoration: none;
+	}
+
+	p:hover {
+		color: #F68657;
 	}
 
 	.storyImage{
@@ -64,11 +81,12 @@ h1{
 		background-size: cover;
 		background-position: center;
 		.abstractText{
-			padding: 12px;
+			padding: 24px;
 			position: absolute;
 			bottom: -200px;
 			line-height: 1.5rem;
 			background-color: rgba(0, 0, 0, 0.5);
+			@include popdown
 		}
 	}
 
@@ -78,8 +96,4 @@ h1{
 			@include popup;
 		}
 	}
-
-	p:hover {
-		color: cadetblue;
-	}	
 }
