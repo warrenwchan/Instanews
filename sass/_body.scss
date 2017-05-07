@@ -38,11 +38,12 @@ h1{
 
 .newsContainer{
 	.news{
+		flex-direction: column;
 		display: flex;
 		flex-wrap: wrap;
 
-		@include mobile {
-			flex-direction: column;
+		@include tablet {
+			flex-direction: row;
 		}
 	}
 
@@ -51,6 +52,10 @@ h1{
 		transition: all .2s ease-in;
     	transform: scale(1.0);
 		@include fadein;
+
+		@include mobile {
+			width: 100%;
+		}
 		@include tablet{
 			width: 50%;
 		}
