@@ -2,6 +2,7 @@ $(document).ready(function () {
 
 	$('#selector').selectric();
 
+	var storyCount = 48;
 	var userSelect = '';
 	var loadingMessage = $('.loading');
 	loadingMessage.hide();
@@ -13,11 +14,10 @@ $(document).ready(function () {
 		loadingMessage.show();
 		userSelect = this.value;
 
-		// Built by LucyBot. www.lucybot.com
 		var url = 'https://api.nytimes.com/svc/topstories/v2/' + userSelect + '.json';
 		url += '?' + $.param({
 			'api-key': '049673d3a2eb4eda9c6bb4ec46c49cf5',
-			'callback': '12'
+			'callback': storyCount,
 		});
 
 		$.ajax({
@@ -30,7 +30,7 @@ $(document).ready(function () {
 				return artical.multimedia.length;
 			}
 			var filtered = result.results.filter(checkPictures)
-			filtered.splice(12);
+			filtered.splice(storyCount);
 			var newsString = '';
 			$.each(filtered, function (item, value) {
 				//variances & markups

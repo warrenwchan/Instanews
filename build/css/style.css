@@ -510,7 +510,7 @@ h1 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  @media all and (max-width: 600px) {
+  @media all and (min-width: 480px) {
     .newsContainer .news {
       -ms-flex-direction: column;
           flex-direction: column; } }
